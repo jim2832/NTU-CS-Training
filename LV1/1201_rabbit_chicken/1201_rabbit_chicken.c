@@ -63,21 +63,19 @@ int main(void){
     int flag = 0; //判斷是否有找到
     scanf("%d %d", &N, &M);
 
-    for(X=0; X<= 10000; X++){
-        for(Y=0; Y<= 10000; Y++){
-            if(X+Y == N && 2*X + 4*Y == M){
-                printf("YES\n");
-                printf("%d %d\n", X, Y);
-                flag = 1;
-                break;
-            }
-        }
+    X = (4 * N - M) / 2;//算出雞的數量
+    Y = N - X;//算出兔的數量
+
+    if (X <= 0 || Y <= 0) {
+    //結果小於等於0，答案不成立，無解
+        printf("No\n");
+    } else {
+    //結果大於0
+        printf("YES\n");
+        printf("%d %d", X, Y);
     }
-    if(flag == 0){
-        printf("NO\n");
-    }
-    
-    return 0;
+
+  return 0;
 }
 
 //cd /Users/mac/Desktop/NTU_CS_Training/LV1/1201_rabbit_chicken
