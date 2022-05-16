@@ -19,7 +19,7 @@ Sample Output
 
 int main(void){
     int num, ones, tens, huns;
-    scanf("%d", num);
+    scanf("%d", &num);
 
     ones = num % 10; //個位
     num /= 10; // 123變12
