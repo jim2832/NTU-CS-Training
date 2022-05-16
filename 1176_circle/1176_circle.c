@@ -14,14 +14,14 @@ int main(void){
     double diff;
 
     scanf("%d", &small_radius);
-    scanf("%d", &small_radius);
+    scanf("%d", &big_radius);
 
+    big_area = pow(big_radius, 2) * PI;
     small_area = pow(small_radius, 2) * PI;
-    big_area = pow(big_radius, 2) *PI;
 
-    diff = small_area - big_area;
+    diff = big_area - small_area;
 
-    printf("%.2f", diff);
+    printf("%.2f\n", diff);
 
     return 0;
 }
