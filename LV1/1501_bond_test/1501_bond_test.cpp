@@ -41,9 +41,22 @@ YES
 #include <iostream>
 #include <string>
 #include <math.h>
+using namespace std;
 
 int main(void){
+    int N;
+    string str;
+    string::size_type idx;
     
+    cin >> N;
+    str = to_string(N);
+
+    if(N % 7 == 0 || str.find("7") != string::npos){
+        cout << "YES" << endl;
+    }
+    else{
+        cout << "NO" << endl;
+    }
     
     return 0;
 }
