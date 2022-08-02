@@ -54,6 +54,7 @@ int main(void){
     long int password, input, i;
     bool correct_state = false;
     cin >> password;
+    
     if(password > 0 && password < 2000000000){
         while(i < 100){
             cin >> input;
