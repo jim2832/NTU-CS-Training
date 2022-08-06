@@ -63,6 +63,7 @@ If there are multiple watersheds with same highest level and same water volume, 
 */
 
 #include <iostream>
+#include <stdlib.h>
 #include <string>
 #include <cmath>
 #include <algorithm>
@@ -74,14 +75,19 @@ int main(void){
     int input[N];
 
     for(int i=0; i<N; i++){
-        cin >> input[N];
+        cin >> input[i];
     }
 
     for(int i=0; i<N; i++){
-        for(int j=0; j<N; j++){
-            
+        for(int j=i; j<N; j++){
+            area = abs(i-j) * min(input[i], input[j]);
+            if(max_area < area){
+                max_area = area;
+            }
         }
     }
+
+    cout << max_area;
     
     return 0;
 }
