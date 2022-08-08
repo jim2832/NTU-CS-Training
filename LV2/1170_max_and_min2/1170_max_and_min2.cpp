@@ -88,6 +88,5 @@ int main(void){
         cout << max << " " << max_pos + 1 << endl << min << " " << min_pos + 1 << endl;
     }
     
-    
     return 0;
 }
