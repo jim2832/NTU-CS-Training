@@ -61,7 +61,7 @@ int main(void){
     cin >> elective_needed;
 
     while(true){
-        scanf("%s,%s,%s,%d", course_name, rank, type, &credit);
+        scanf("%[^a],%s,%s,%d", course_name, rank, type, &credit);
         cout << course_name;
         if(strcmp(course_name, "q") == 0){
             break;

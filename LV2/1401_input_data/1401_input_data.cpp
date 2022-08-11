@@ -62,15 +62,44 @@ Hint
 */ 
 
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string>
 #include <cmath>
-using namespace std;
+#include <cstdlib>
+#include <typeinfo>
+#include <sstream>
 
 int main(void){
-    int int_sum = 0;
-    double float_sum = 0;
-    while(true){
+    std::string input;
+    int int_input, int_sum = 1;
+    float float_input, float_sum = 1, temp;
 
+    while(true){
+        std::cin >> input;
+        if(input == "q"){
+            break;
+        }
+        temp = atof(input.c_str()); //string to float
+        if(temp - int(temp) == 0){
+            int_sum *= temp;
+        }
+        else{
+            float_sum *= temp;
+        }
+    }
+
+    if(float_sum == int_sum){
+        printf("%.2f\n%d\n", float_sum, int_sum);
+        std::cout << "Float = Int" << std::endl;
+    }
+    else if(float_sum < int_sum){
+        printf("%.2f\n%d\n", float_sum, int_sum);
+        std::cout << "Float < Int" << std::endl;
+    }
+    else{
+        printf("%.2f\n%d\n", float_sum, int_sum);
+        std::cout << "Float > Int" << std::endl;
     }
 
     return 0;

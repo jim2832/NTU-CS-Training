@@ -33,37 +33,48 @@ using namespace std;
 
 int main(void){
     int a, b, c;
-    bool is_max, is_min;
+    int max = 0, min = 100;
+    int num[3];
 
     cin >> a;
     cin >> b;
     cin >> c;
-
-
-    if(a > b && a > c){
-        is_max = true;
-        cout << "True" << endl;
-    }
-    else{
-        cout << "False" << endl;
-    }
     
-    if(a < b && a < c){
-        is_min = true;
+    num[0] = a;
+    num[1] = b;
+    num[2] = c;
+
+    for(int i=0; i<3; i++){
+        if(max < num[i]){
+            max = num[i];
+        }
+        if(min > num[i]){
+            min = num[i];
+        }
+    }
+
+    if(a == max){
         cout << "True" << endl;
     }
     else{
         cout << "False" << endl;
     }
 
-    if(is_max != true){
+    if(a == min){
         cout << "True" << endl;
     }
     else{
         cout << "False" << endl;
     }
 
-    if(is_min != true){
+    if(a != max){
+        cout << "True" << endl;
+    }
+    else{
+        cout << "False" << endl;
+    }
+
+    if(a != min){
         cout << "True" << endl;
     }
     else{
