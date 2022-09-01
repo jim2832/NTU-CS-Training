@@ -24,26 +24,21 @@ is not a number
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <algorithm>
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
-
-bool isNumber(const string& str)
-{
-    for (char const &c : str) {
-        if (std::isdigit(c) == 0) return false;
-    }
-    return true;
-}
+#include <stdio.h>
+#include <stdlib.h>
+using namespace std;
 
 int main(void){
-    string str;
+    int input, n;
+    input = scanf("%d", &n);
 
-    cin >> str;
-
-    isNumber(str) ? cout << "n=" << str << endl : cout << "is not a number" << endl;
+    if(input == 0) {
+        cout << "is not a number" << endl;
+        while(getchar()!='\n');
+    }	
+    else{
+        cout << "n=" << n << endl;
+    }
     
     return 0;
 }
