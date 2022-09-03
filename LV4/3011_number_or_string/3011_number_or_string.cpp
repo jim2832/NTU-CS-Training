@@ -34,7 +34,6 @@ int main(void){
 
     if(input == 0) {
         cout << "is not a number" << endl;
-        while(getchar()!='\n');
     }	
     else{
         cout << "n=" << n << endl;
