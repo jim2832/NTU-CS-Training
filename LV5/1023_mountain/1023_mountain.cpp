@@ -55,6 +55,8 @@ int main(void){
     }
 
     cout << max_pos+1 << " " << max << endl << min_pos+1 << " " << min << endl;
+
+    delete [] mountain;
     
     return 0;
 }
