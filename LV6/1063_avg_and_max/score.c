@@ -1,6 +1,6 @@
-#include "score.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "score.h"
 
 void inputAry(int n, int *P){
     for(int i=0; i<n; i++){

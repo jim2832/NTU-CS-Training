@@ -1,6 +1,7 @@
-#include "score.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "score.c"
+#include "score.h"
 
 int main(void){
 
