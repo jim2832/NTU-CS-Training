@@ -36,7 +36,7 @@ C/C++可能不需要用到模組，C99 沒有 M_PI 可以使用，須自行訂�
 #include <stdio.h>
 #include <string>
 #include <cmath>
-#define PI 3.14159265359
+#define PI 3.141592653589793
 using namespace std;
 
 int main(void){
@@ -44,8 +44,10 @@ int main(void){
     double area;
     cin >> n1;
 
-    area = (double)4/3 * PI * pow(n1,3);
-    printf("%.3f\n", area);
+    area = (double)PI * pow(n1,3);
+    area = (double)area * 4;
+    area = (double)area / 3;
+    printf("%.3lf\n", area);
     
     return 0;
 }

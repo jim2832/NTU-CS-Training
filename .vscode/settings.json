@@ -65,7 +65,10 @@
         "algorithm": "cpp",
         "functional": "cpp",
         "iterator": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "deque": "cpp",
+        "__memory": "cpp",
+        "random": "cpp"
     },
     "git.ignoreLimitWarning": true
 }
