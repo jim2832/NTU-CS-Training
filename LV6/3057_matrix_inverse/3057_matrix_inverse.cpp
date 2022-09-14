@@ -80,13 +80,46 @@ print('%.2f'%3) = 3.00
 #include <cmath>
 using namespace std;
 
-// int Matrix_Inverse(int *arr){
+void Matrix_Inverse(int matrix[2][2]){
+    double temp[2][2];
+    int det = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
 
-// }
+    if(det == 0){
+        cout << "none" << endl;
+        return;
+    }
+
+    temp[0][0] = (double)matrix[1][1] / det;
+    temp[0][1] = (double)-matrix[0][1] / det;
+    temp[1][0] = (double)-matrix[1][0] / det;
+    temp[1][1] = (double)matrix[0][0] / det;
+
+    for(int i=0; i<2; i++){
+        for(int j=0 ;j<2; j++){
+            temp[i][j] += 0.01;
+            if(j == 0){
+                if(temp[i][j] == 0){
+                    printf("%.1f ", 0.0);
+                }
+                else{
+                    printf("%.1f ", round(temp[i][j] * 100) / 100.0);
+                }
+            }
+            else{
+                if(temp[i][j] == 0){
+                    printf("%.1f", 0.0);
+                }
+                else{
+                    printf("%.1f", round(temp[i][j] * 100) / 100.0);
+                }
+            }
+        }
+        cout << endl;
+    }
+}
 
 int main(void){
     int matrix[2][2];
-    double inverse[2][2];
 
     for(int i=0; i<2; i++){
         for(int j=0 ;j<2; j++){
@@ -94,29 +127,7 @@ int main(void){
         }
     }
 
-    int det = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
-
-    if(det == 0){
-        cout << "none" << endl;
-        return 0;
-    }
-
-    inverse[0][0] = (double)matrix[1][1] / det;
-    inverse[0][1] = (double)-matrix[0][1] / det;
-    inverse[1][0] = (double)-matrix[1][0] / det;
-    inverse[1][1] = (double)matrix[0][0] / det;
-
-    for(int i=0; i<2; i++){
-        for(int j=0 ;j<2; j++){
-            if(inverse[i][j] == 0){
-                printf("%.1f ", 0.0);
-            }
-            else{
-                printf("%.1f ", round(inverse[i][j] * 100) / 100.0);
-            }
-        }
-        cout << endl;
-    }
+    Matrix_Inverse(matrix);
     
     return 0;
 }
