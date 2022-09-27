@@ -68,7 +68,8 @@
         "utility": "cpp",
         "deque": "cpp",
         "__memory": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "math.h": "c"
     },
     "git.ignoreLimitWarning": true
 }
