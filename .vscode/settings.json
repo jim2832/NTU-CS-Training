@@ -69,7 +69,17 @@
         "deque": "cpp",
         "__memory": "cpp",
         "random": "cpp",
-        "math.h": "c"
+        "math.h": "c",
+        "condition_variable": "cpp",
+        "numbers": "cpp",
+        "numeric": "cpp",
+        "queue": "cpp",
+        "semaphore": "cpp",
+        "thread": "cpp",
+        "*.tcc": "cpp",
+        "memory_resource": "cpp",
+        "stop_token": "cpp",
+        "cinttypes": "cpp"
     },
     "git.ignoreLimitWarning": true
 }
