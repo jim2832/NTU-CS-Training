@@ -117,7 +117,7 @@ class student{
         //attribute
         string name;
         string gender;
-        int grades[100];
+        int *grades = new int[100];
         int count;
         int fail_count;
 
