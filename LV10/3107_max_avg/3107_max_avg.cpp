@@ -90,6 +90,7 @@ Hint
 */
 
 #include <iostream>
+#include <stdio.h>
 #include <string>
 #include <cmath>
 using namespace std;
@@ -122,12 +123,14 @@ class student{
 
         //method
         double avg(){
-            double avg;
+            double avg = 0;
 
             for(int i=0; i<count; i++){
                 avg += grades[i];
             }
-            avg /= count;
+            if(avg != 0){
+                avg /= count;
+            }
 
             return avg;
         }
@@ -143,15 +146,28 @@ class student{
                     fail_count++;
                 }
             }
+            return fail_count;
         }
 
         void show(){
-            
+            cout << "Name: " << name << endl;
+            cout << "Gender: [";
+            for(int i=0; i<count; i++){
+                if(i == count - 1){
+                    cout << grades[i];
+                }
+                else{
+                    cout << grades[i] << ", ";
+                }
+            }
+            cout << "]" << endl;
+            printf("Avg: %.1f\n", avg());
+            cout << "Fail Number: " << fcount() << endl << endl;
         }
 
-        student top(student *student){
+        // student top(student *students){
 
-        }
+        // }
 };
 
 int main(void){
@@ -160,6 +176,14 @@ int main(void){
     student s3 = student("John","M");
     student s4 = student("Ann","F");
     student s5 = student("Peter","M");
+
+    student students[5];
+    students[0] = s1;
+    students[1] = s2;
+    students[2] = s3;
+    students[3] = s4;
+    students[4] = s5;
+
     s1.add(80);
     s1.add(90);
     s1.add(55);
@@ -174,7 +198,7 @@ int main(void){
     s5.add(60);
     s5.add(60);
     
-    student top_student = top(s1,s2,s3,s4,s5)
+    //student top_student = top(s1,s2,s3,s4,s5)
     
     return 0;
 }
