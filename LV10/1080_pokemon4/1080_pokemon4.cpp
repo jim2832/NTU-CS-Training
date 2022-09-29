@@ -100,6 +100,8 @@ HP: 500
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <cstdlib>
+#include <algorithm>
 using namespace std;
 
 struct Pokemon{
@@ -108,11 +110,23 @@ struct Pokemon{
     int Hp;
 };
 
+int stringCompare(Pokemon p1, Pokemon p2){
+    return strcmp(p1.Name, p2.Name);
+}
+
+bool LvCompare(Pokemon p1, Pokemon p2){
+    return p1.Lv > p2.Lv;
+}
+
+int HpCompare(Pokemon p1, Pokemon p2){
+    return p1.Hp > p2.Hp;
+}
+
 int main(void){
     int n, m;
     cin >> n; //input number
 
-    struct Pokemon pokemon[n];
+    struct Pokemon pokemon[n], temp;
 
     //input
     for(int i=0; i<n; i++){
@@ -125,20 +139,35 @@ int main(void){
 
     //multiple choices
     switch(m){
-    case 0:
-        for(int i=0; i<n; i++){
-            printf("Name: %s\n", pokemon[i].Name);
-            printf("Lv: %d\n", pokemon[i].Lv);
-            printf("HP: %d\n", pokemon[i].Hp);
-            printf("\n");
-        }
-        break;
+        case 0:
+            for(int i=0; i<n; i++){
+                printf("Name: %s\nLv: %d\nHP: %d\n\n", pokemon[i].Name, pokemon[i].Lv, pokemon[i].Hp);
+            }
+            break;
 
-    case 1:
+        case 1:
+            qsort(pokemon, n, sizeof(struct Pokemon), stringCompare);
+            for(int i=0; i<n; i++){
+                printf("Name: %s\nLv: %d\nHP: %d\n\n", pokemon[i].Name, pokemon[i].Lv, pokemon[i].Hp);
+            }
+            break;
 
-    
-    default:
-        break;
+        case 2:
+            qsort(pokemon, n, sizeof(struct Pokemon), LvCompare);
+            for(int i=0; i<n; i++){
+                printf("Name: %s\nLv: %d\nHP: %d\n\n", pokemon[i].Name, pokemon[i].Lv, pokemon[i].Hp);
+            }
+            break;
+
+        case 3:
+            qsort(pokemon, n, sizeof(struct Pokemon), HpCompare);
+            for(int i=0; i<n; i++){
+                printf("Name: %s\nLv: %d\nHP: %d\n\n", pokemon[i].Name, pokemon[i].Lv, pokemon[i].Hp);
+            }
+            break;
+        
+        default:
+            break;
     }
     
     return 0;
