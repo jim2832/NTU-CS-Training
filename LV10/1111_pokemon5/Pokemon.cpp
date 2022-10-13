@@ -14,7 +14,7 @@ Pokemon::Pokemon(){
 
 //constructor2
 Pokemon::Pokemon(std::string na, int lv, int hp){
-    setData(na,lv, hp);
+    setData(na, lv, hp);
     items = new std::string[Lv]; //dynamic allocation
 }
 
