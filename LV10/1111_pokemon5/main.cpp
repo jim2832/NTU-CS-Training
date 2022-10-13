@@ -26,7 +26,7 @@ int main()
     cin >> Item;
     p1.addItem(Item);
     cin >> Item;
-    p1.addItem(Item);    
+    p1.addItem(Item);
     p1.ShowInfo();
  
     return 0;

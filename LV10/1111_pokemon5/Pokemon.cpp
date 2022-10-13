@@ -25,7 +25,7 @@ Pokemon::~Pokemon(){
 
 void Pokemon::addItem(std::string item){
     if(itemNum == Lv){
-        cout << Name << " is full, cannot carry " << item << endl;
+        cout << Name << " is full, cannot carry " << item << "." << endl;
         return;
     }
     items[itemNum] = item;
@@ -38,12 +38,7 @@ void Pokemon::ShowInfo(){
     cout << "HP: " << HpCur << "/" << HpMax << endl;
     cout << "Items: ";
     for(int i=0; i<itemNum; i++){
-        if(i == itemNum -1){
-            cout << items[i];
-        }
-        else{
-            cout << items[i] << " ";
-        }
+        cout << items[i] << " ";
     }
     cout << endl << endl;
 }
